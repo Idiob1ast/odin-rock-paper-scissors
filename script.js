@@ -1,5 +1,5 @@
 function game() {
-    // Function to randomly return either 'Rock', 'Paper', or 'Scissors'
+    // Function to randomly return either 'Rock', 'Paper', or 'Scissors' for computer choice
     function getComputerChoice() {
         // Random number between 1 and 3 to map to the three choices, i.e. 1 = Rock, 2 = Paper, etc.
         let computerChoice = Math.floor(Math.random() * 3) + 1
@@ -12,14 +12,15 @@ function game() {
         } else if (computerChoice === 3) {
             return "scissors";
         }
-        }
-    // Function capitalize words
+    }
+
+    // Function to capitalize words
     function toCapital(txt) {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     }
 
     // Function to play a single round of Rock Paper Scissors
-    // Rock beats Scissors; Paper beats Rock; Scissors beat Paper.
+    // Rock beats Scissors; Paper beats Rock; Scissors beats Paper.
     function playRound(playerSelection, computerSelection) {
 
         if (playerSelection === computerSelection) {
@@ -35,19 +36,17 @@ function game() {
         }
     }
 
-    // Prompt player for selection
+    // Prompt player for selection and make it lowercase for parsing
     let playerSelection = prompt("Rock, Paper, or Scissors?", '').toLowerCase();
-    // console.log(playerSelection);
 
     // Get computer's selection from function call
     let computerSelection = getComputerChoice();
-    // console.log(computerSelection);
 
     // Log results to console
     console.log(playRound(playerSelection, computerSelection));
 }
 
-// Play 5 rounds
+// Play 5 rounds of the game
 for (let round = 0; round < 5; round++) {
     game()    
 }
